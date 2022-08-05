@@ -1,0 +1,302 @@
+:root{
+    --gold-orange: #f4b324;
+    --box-shadow: 0 .5rem 1.5rem rgba(182, 100, 7, 0.651);
+}
+
+*{
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    height: auto;
+}
+
+body{
+    background: url("/images/winternightsky-7d64d2ca4b434bfdb184c0c81fabe8b1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+.main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.945) 56%, rgb(72, 70, 85) 91%);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem 7%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.main-header .logo{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    color: var(--gold-orange);
+}
+
+
+
+/* -------------------------------------CSS of icons------------------------------------------*/
+.main-header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    margin-right: .4rem;
+    background:var(--black-used);
+    color: var(--gold-orange);
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.main-header .icons div:hover{
+    color:#000;
+    background: var(--gold-orange);
+
+}
+/* -------------------------------------End of CSS of icons------------------------------------------*/
+
+
+/* -------------------------------------End of CSS of navbar-----------------------------------------*/
+.main-header .navbar{
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background: rgb(255, 230, 230);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 30rem;
+    transform: scale(0);
+    transform-origin: top right;
+}
+
+.main-header .navbar.active{
+   transform: scale(1);
+}
+
+.main-header .navbar a{
+    display: block;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #000;
+    border-radius: .5rem;
+}
+
+.main-header .navbar a:hover{
+    color: var(--gold-orange);
+    background: #000;
+    padding-right: 2rem;
+}
+
+/*-----------------------------------------CSS of Home section-------------------------------------------*/
+.home{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 10rem;
+}
+
+.home .content{
+    align-items: flex-end;
+    flex: 1 1 50rem;
+}
+
+.home .content h1{
+    text-align: center;
+    color: var(--gold-orange);
+    font-size: 4rem;
+}
+
+.home .content p{
+    color:  var(--gold-orange);
+    font-size: 1.7rem;
+    line-height: 1.7;
+    padding: 1rem 0;
+}
+
+/*----------------------------------------- End of CSS of Home section-------------------------------------------*/
+
+/* form for administrator*/ 
+.admin form{
+    max-width: 70rem;
+    margin: 0 auto; 
+    text-align: center;
+}
+
+.admin form .inputBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.admin form textarea,
+.admin form .inputBox input{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--gold-orange);
+    margin: .7rem 0;
+    background: rgb(0, 0, 0);
+    box-shadow: var(--box-shadow);
+    text-transform: none;
+    border-radius: .5rem;
+}
+
+.admin form .content h1{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    color: var(--gold-orange);
+    font-size: 3rem;
+}
+
+.admin #places{
+    margin-top: 5rem;
+}
+
+.admin #places .inputBox{
+    justify-content: center;
+}
+
+.admin #places input{
+    margin-top: 1.7rem;
+}
+
+.admin #routes{
+    margin-top: 5rem;    
+}
+
+.admin #airports{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+.admin #airline{
+    margin-top: 5rem;
+}
+
+.admin #new_places input{
+    text-align: center;
+}
+
+
+.admin form .inputBox #middle{
+    flex-wrap: wrap;
+}
+
+.admin form textarea{
+    height: 20rem;
+    resize: none;
+}
+
+.admin form .inputBox input{
+    width: 49%;
+}
+
+
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    color: rgb(255, 255, 255);
+    background: #000;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+@keyframes hoverbook{
+    0% {background-color: #000000;}
+    100% {background-color: rgba(165, 88, 0, 0.705);}
+}
+
+
+.btn:hover{
+    letter-spacing: .2rem;
+    animation-name: hoverbook;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: 2ms;
+}
+
+
+
+
+/*------------------------------Media queries--------------------------------------------*/
+
+@media (max-width:991px){
+    html{
+        font-size: 62%;
+    }
+
+    .main-header{
+        padding: 1.5rem 2rem;
+    }
+    
+    section{
+        padding: 2rem;
+    }
+
+    section .content{
+        text-align: center;
+    }
+}
+
+
+@media (width: 912px){
+    html{
+        font-size: 70%;
+    }
+}
+
+
+@media (max-width: 768px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .main-header .navbar{
+        right: 2rem; 
+    }
+    
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .contact form .inputBox input{
+        width: 100%;
+    }
+    
+    .main-header .icons div{
+        margin: .1rem;
+    }
+}

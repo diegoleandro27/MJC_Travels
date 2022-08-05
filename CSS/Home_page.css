@@ -1,0 +1,782 @@
+:root{ 
+    --gold-orange: #f4b324;
+    --gradient-used: linear-gradient(90deg, rgba(0,0,0,0.9290091036414566) 63%, rgba(0,6,101,0.8869922969187675) 88%, rgba(14,0,131,0.7329306722689075) 98%);
+    --black-used:  #000;
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.651);
+}
+
+*{
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth; 
+}
+
+section{
+    padding: 2rem 7%;
+    text-align: center;
+}
+
+body{
+    background: rgb(255, 255, 255);
+}
+
+body.active{
+    background: rgba(7, 7, 7, 0.918); 
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--black-used);
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+@keyframes hoverbook{
+    0% {background-color: #000000;}
+    100% {background-color: rgba(165, 88, 0, 0.705);}
+}
+
+
+.btn:hover{
+    letter-spacing: .2rem;
+    animation-name: hoverbook;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: 2ms;
+}
+
+.main-header{
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.8421743697478992) 56%, rgba(46,44,60,1) 91%);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem 7%;
+    z-index: 1000; 
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.main-header .logo{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    color: var(--gold-orange);
+}
+
+/* -------------------------------------CSS of Search Form------------------------------------------*/
+
+.main-header .search-form{
+    background: rgb(255, 255, 255);
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    height: 4.5rem;
+    width: 50rem;
+}
+
+.main-header .search-form input{
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    padding: 1rem;    
+}
+
+.main-header .search-form label{
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    color: rgb(22, 21, 21);
+    cursor: pointer; 
+}
+
+.main-header .search-form label:hover{
+    color:var(--gold-orange);
+}
+
+#search-btn{
+    display: none;
+}
+
+#search{
+    display: flex;
+}
+
+/* -------------------------------------End of CSS of Search Form------------------------------------------*/
+
+
+/* -------------------------------------CSS of icons------------------------------------------*/
+
+
+.main-header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    margin-right: .4rem;
+    background:var(--black-used);
+    color: var(--gold-orange);
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+
+.main-header .icons div:hover{ 
+    color:#000;
+    background: var(--gold-orange);
+
+}
+/* -------------------------------------End of CSS of icons------------------------------------------*/
+
+
+/* -------------------------------------End of CSS of navbar-----------------------------------------*/
+.main-header .navbar{
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background: rgb(255, 230, 230);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 25rem;
+    transform: scale(0);
+    transform-origin: top right;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+}
+
+.main-header .navbar.active{
+   transform: scale(1);
+}
+
+.main-header .navbar a{
+    display: block;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #000;
+    border-radius: .5rem;
+}
+
+.main-header .navbar a:hover{ 
+    color: var(--gold-orange);
+    background: var(--black-used);
+    padding-right: 2rem;
+}
+
+/* Make clicks pass-through */
+#nprogress {
+    pointer-events: none;
+  }
+  
+  #nprogress .bar {
+    background: #29d;
+  
+    position: fixed;
+    z-index: 1031;
+    top: 0;
+    left: 0;
+  
+    width: 100%;
+    height: 2px;
+  }
+  
+  /* Fancy blur effect */
+#nprogress .peg {
+    display: block;
+    position: absolute;
+    right: 0px;
+    width: 100px;
+    height: 100%;
+    box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+    opacity: 1.0;
+  
+    -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+            transform: rotate(3deg) translate(0px, -4px);
+}
+  
+  /* Remove these to get rid of the spinner */
+#nprogress .spinner {
+    display: block;
+    position: fixed;
+    z-index: 1031;
+    top: 15px;
+    right: 15px;
+}
+  
+#nprogress .spinner-icon {
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+  
+    border: solid 2px transparent;
+    border-top-color: #29d;
+    border-left-color: #29d;
+    border-radius: 50%;
+  
+    -webkit-animation: nprogress-spinner 400ms linear infinite;
+            animation: nprogress-spinner 400ms linear infinite;
+}
+  
+.nprogress-custom-parent {
+    overflow: hidden;
+    position: relative;
+}
+  
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+    position: absolute;
+}
+  
+@-webkit-keyframes nprogress-spinner {
+    0%   { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+  
+  
+/* -------------------------------------End of CSS of navbar------------------------------------------*/
+
+
+/* -------------------------------------End of CSS of login/sig-Up form------------------------------------------*/
+.main-header .login-form,
+.main-header .signup-form
+{
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background: rgb(0, 0, 0);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    padding: 2rem;
+    transform: scale(0);
+    transform-origin: top right;
+}
+
+.main-header .login-form.active,
+.main-header .signup-form.active
+{
+    transform: scale(1);
+}
+
+.main-header .login-form .inputBox,
+.main-header .signup-form .inputBox
+{
+    margin-bottom: 1rem;
+}
+
+.main-header .login-form .inputBox span,
+.main-header .signup-form .inputBox span
+{
+    font-size: 1.7rem;
+    color: var(--gold-orange); 
+}
+
+.main-header .login-form .inputBox input,
+.main-header .signup-form .inputBox input
+{
+    font-size: 1.5rem;
+    color: #fff;
+    border-radius: .5rem;
+    padding: 1rem;
+    background: var(--gold-orange);
+    width: 100%;
+    text-transform: none;
+    margin: .5rem 0;
+}
+
+.main-header .login-form .remember
+{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem 0;
+}
+
+
+.main-header .login-form .remember label
+{ 
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+.main-header .login-form .btn,
+.main-header .signup-form .btn
+{
+    text-align: center;
+    width: 100%;
+    background: gray;
+}
+
+.main-header .log-in .btn.active,
+.main-header .signup-form .btn.active
+{
+    transform: scale(1);
+}
+
+.main-header .login-form  span,
+.main-header .signup-form  span
+{
+    margin-left: 2rem;
+    color: var(--gold-orange);
+    font-size: 10px;
+    text-align: center;
+}
+
+.main-header .login-form span a,
+.main-header .signup-form span a
+{
+    color: var(--gold-orange);
+    font-size: 10px;
+    text-align: center;
+    cursor: pointer
+}
+
+.main-header .login-form h6,
+.main-header .signup-form h6
+{
+    color:#fff; 
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+/* -------------------------------------End of CSS of login-form------------------------------------------*/
+
+
+
+/*-----------------------------------------CSS of Home section-------------------------------------------*/
+.home{ 
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 7rem;
+}
+
+.home .image{
+    flex: 1 1 45rem;
+}
+
+
+.home .image img{
+    width: 100%;
+}
+
+
+.home .content{
+    flex: 1 1 50rem;
+}
+
+.home .content h1{
+    color: var(--gold-orange);
+    font-size: 4rem;
+}
+
+.home .content p{
+    color:  var(--gold-orange);
+    font-size: 1.7rem;
+    line-height: 1.7;
+    padding: 1rem 0;
+}
+
+/*----------------------------------------- End of CSS of Home section-------------------------------------------*/
+
+/*-----------------------------------------CSS of filter flight form-------------------------------------------*/
+
+.form-container form{
+    background: rgb(167, 164, 164);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    padding: 2rem;
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.form-container form .inputBox{
+    flex: 1 1 23rem;
+}
+
+
+.form-container form .inputBox span{
+    font-size: 1.7rem;
+    color: rgb(0,0,0);
+}
+
+
+
+.form-container form .inputBox select{
+    font-size: 1.5rem;
+    color:rgb(0, 0, 0);
+    margin: 1.5rem 0;
+    border-radius: .5rem;
+    text-transform: none;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+.form-container form .inputBox  input{
+    font-size: 1.5rem;
+    color:rgb(0, 0, 0);
+    margin: 1.5rem 0;
+    border-radius: .5rem;
+    text-transform: none;
+    width: 100%;
+    padding: 1rem;
+}
+
+.form-container form .btn{
+    flex: 1 1 10rem;
+    margin-top: 28px;
+    padding: 1rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+/*-----------------------------------------End of CSS of filter flight form-------------------------------------------*/
+
+/*--------------------------------------------------------------CSS of Offers----------------------------------------- */ 
+.heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    color: var(--gold-orange); 
+    font-size: 4rem;      
+}
+
+.heading span{
+    position: relative;
+    z-index: 0;
+}
+
+.heading span::before{
+    content: "";
+    position: absolute; 
+    bottom: 1rem;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+
+.offers .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem; 
+}
+
+.offers .box-container .box{
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+
+}
+
+.offers .box-container .box .image{
+    height: 25rem;
+    width: 100%;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.offers .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.offers .box-container .box .image h3{
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    font-size: 2rem;
+    color:#fff;
+    background: #000000;
+    border-radius: .5rem;
+    font-weight: lighter;
+    padding: .5rem 1.5rem;
+
+}
+
+.offers .box-container .box .image h3 i{
+    color:var(--gold-orange);
+}
+
+.offers .box-container .box .content{
+    padding: 1.5rem;
+    padding-top: 0;
+}
+
+.offers .box-container .box .price{
+    font-weight: bolder; 
+    color:rgb(0, 0, 0);
+    font-size: 2.5rem; 
+}
+
+.offers .box-container .box .price span{
+    font-weight: lighter; 
+    color:rgb(94, 94, 94);
+    font-size: 1.5rem; 
+    text-decoration: line-through;
+
+}
+
+.offers .box-container .box  p{
+    font-size: 1rem;
+    padding: .5rem 0;
+    color: #000; 
+    line-height: 1.7;
+}
+/*---------------------------------End of Offers-----------------------*/ 
+
+/*------------------------------CSS Review----------------------------- */
+.review .review-slider{ 
+    box-shadow: var(--box-shadow);
+}
+
+.review .review-slider .slide{
+    background-color: rgb(66, 63, 63);
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem;
+}
+
+.review .review-slider .slide img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+}
+
+.review .review-slider .slide h3{
+    font-size: 2.5rem;
+    color: var(--gold-orange);
+}
+
+.review .review-slider .slide p{
+    font-size: 1.6rem;
+    color: var(--gold-orange);
+    line-height: 1.7;
+    padding: 1rem 0;
+}
+
+.review .review-slider .slide .stars{
+    padding: 1rem 0;
+    padding-bottom: 1.5rem;
+}
+
+.review .review-slider .slide .stars i{
+    font-size: 2rem;
+    color: var(--gold-orange);
+}
+/*------------------------------End CSS Review----------------------------- */
+
+/*---------------------------- CSS contact-US -----------------------*/
+
+.contact form{
+    max-width: 70rem;
+    margin: 0 auto; 
+    text-align: center;
+}
+
+.contact form .inputBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact form textarea,
+.contact form .inputBox input{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--gold-orange);
+    margin: .7rem 0;
+    background: white;
+    box-shadow: var(--box-shadow);
+    text-transform: none;
+    border-radius: .5rem;
+}
+
+.contact form textarea{
+    height: 20rem;
+    resize: none;
+}
+
+.contact form .inputBox input{
+    width: 49%;
+}
+
+/*---------------------------- End CSS contact-US -----------------------*/
+
+
+/*-----------------------footer section-----------------------------*/ 
+
+.footer .box-container .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.footer .box-container .box p{
+
+    color: var(--gold-orange);
+    font-size: 13px;
+}
+
+.footer .box-container .box h3{
+    color: var(--gold-orange);
+    margin: 0 3rem;
+    line-height: 4.5rem;
+}
+
+
+
+.footer i{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    border-radius: 4rem;
+    margin-right: .4rem;
+    color: var(--gold-orange);
+    cursor: pointer;
+    text-align: center;
+    -webkit-border-radius: 4rem;
+    -moz-border-radius: 4rem;
+    -ms-border-radius: 4rem;
+    -o-border-radius: 4rem;
+}
+
+.footer i:hover{
+    cursor: pointer; 
+    background: #000000;
+}
+
+
+/*-----------------------End footer section-----------------------------*/ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------Media queries--------------------------------------------*/
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+
+    .main-header{
+        padding: 1.5rem 2rem;
+    }
+    
+    section{
+        padding: 2rem;
+    }
+
+    section .content{
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px){
+
+    .main-header .navbar{
+        right: 2rem; 
+    }
+
+    #search-btn{
+        display: inline-block;
+    }
+    
+    .main-header .search-form{
+        position: absolute;
+        top: 115%;
+        right: 2rem;
+        background: #fff;
+        border-radius: .5rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+        transform: scale(0);
+        transform-origin: top right;
+    }
+    
+    .main-header .search-form.active{
+        transform: scale(1);
+    }
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .contact form .inputBox input{
+        width: 100%;
+    }
+    
+    .main-header .icons div{
+        margin: .1rem;
+    }
+}

@@ -1,0 +1,516 @@
+:root{
+    --primary: #f4b324;
+    --secondary: #000; 
+    --light: #f3f3f3;
+    --box-shadow: 0px 3px 18px 3px rgba(117, 64, 4, 0.76);
+}
+
+*{
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    height: auto;
+}
+
+body{
+    height: 100%;
+}
+
+
+html{
+    font-size: 62.5%;
+    height: 100vh;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+
+}
+
+.btn{
+    margin-top: 1rem;
+    display: flex;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--secondary);
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+
+@keyframes hoverbook{
+    0% {background-color: #000000;}
+    100% {background-color: rgba(165, 88, 0, 0.705);}
+}
+
+
+.btn:hover{
+    letter-spacing: .2rem;
+    animation-name: hoverbook;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: 2ms;
+}
+
+
+
+
+.main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.945) 56%, rgb(72, 70, 85) 91%);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem 7%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.main-header .logo{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+/* -------------------------------------CSS of icons------------------------------------------*/
+.main-header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    margin-right: .4rem;
+    background:var(--secondary);
+    color: var(--primary);
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.main-header .icons div:hover{
+    color:#000;
+    background: var(--primary);
+
+}
+/* -------------------------------------End of CSS of icons------------------------------------------*/
+
+
+/* -------------------------------------End of CSS of navbar-----------------------------------------*/
+.main-header .navbar{
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background: rgb(255, 230, 230);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 30rem;
+    transform: scale(0);
+    transform-origin: top right;
+}
+
+.main-header .navbar.active{
+   transform: scale(1);
+}
+
+.main-header .navbar a{
+    display: block;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #000;
+    border-radius: .5rem;
+}
+
+.main-header .navbar a:hover{
+    color: var(--primary);
+    background: #000;
+    padding-right: 2rem;
+}
+
+/*-----------------------------------------CSS of cards section-------------------------------------------*/
+
+.heading{
+    text-align: center;
+    padding-top: 12rem;
+    color: var(--primary); 
+    font-size: 4rem;      
+}
+
+.heading span{
+    position: relative;
+    z-index: 0;
+}
+
+.heading span::before{
+    content: "";
+    position: absolute; 
+    bottom: 1rem;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+
+.offers .box-container{
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    justify-content: center;
+    gap: 1.5rem; 
+}
+
+.offers.off{
+    display: none;
+}
+
+.offers .box-container .box{
+    background: rgba(100, 99, 97, 0.644);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+
+}
+
+.offers .box-container .box .image{
+    height: 25rem;
+    width: 100%;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.offers .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.offers .box-container .box .image h3{
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    font-size: 2rem;
+    color:#fff;
+    background: #000000;
+    border-radius: .5rem;
+    font-weight: lighter;
+    padding: .5rem 1.5rem;
+
+}
+
+.offers .box-container .box .image h3 i{
+    color:var(--gold-orange);
+}
+
+.offers .box-container .box .content{
+    padding: 1.5rem;
+    padding-top: 0;
+}
+
+.offers .box-container .box .content fieldset{
+    color:#f4b324
+    
+}
+
+.offers .box-container .box .price{
+    font-weight: bolder; 
+    color:var(--primary);
+    font-size: 2.5rem; 
+    text-align: center;
+}
+
+.offers .box-container .box .price span{
+    font-weight: lighter; 
+    color:rgb(94, 94, 94);
+    font-size: 1.5rem; 
+    text-decoration: line-through;
+    text-align: center;
+
+}
+
+.offers .box-container .box  p{
+    font-size: 1rem;
+    padding: .5rem 0;
+    color: var(--primary); 
+    line-height: 1.7;
+    text-align: center;
+}
+/*-----------------------------------------End of CSS of cards section-------------------------------------------*/
+
+/*--------------------------------------------------CSS of Checkout----------------------------------*/
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:50px;
+    display: none;
+}
+
+.container.on{
+    display: inline-block;
+    margin-top: 13rem;
+    margin-left: 26rem;
+}
+
+.container form{
+    padding:20px;
+    width:700px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+  
+.container form .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+}
+
+.container form .row .col{
+    flex: 1 1 250px;
+}
+
+.container form .row .col:not(:first-child){
+    margin-top: 1.8rem;
+}
+.container form .row .col i{
+    padding-left: .5rem;
+    padding-top: .3rem;
+    position: relative;
+    height: 1.7rem;
+    width: 1.7rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.container form .row .col i:hover{
+    border-radius: 10rem;
+    background: var(--secondary);
+
+}
+
+.container form .row .col .title{
+    font-size: 20px;
+    color:#333;
+    padding-top: 2rem;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+    margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+    margin-bottom: 10px;
+    display: block;
+}
+
+.container form .row .col .inputBox input{
+    width: 100%;
+    border:1px solid #ccc;
+    padding:10px 15px;
+    font-size: 15px;
+    text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+    border:1px solid #000;
+}
+
+.container form .row .col .flex{
+    display: flex;
+    gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+    margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+    width: 100%;
+    padding: 5px;
+    font-size: 17px;
+    background: var(--primary);
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.container form .submit-btn:hover{
+    background: #000000;
+}
+/*-------------------End of CSS of Checkout----------------------------------*/
+ 
+
+/* ----------- Boarding pass ------------*/
+
+.boarding-pass{
+    position: absolute;
+    width: 350px;
+    top: 19%;
+    left: 38%;
+    display: none;
+}
+
+.boarding-pass h3{
+    font-size: 20px;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+
+.boarding-pass.give{
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.boarding-pass .card{
+    display: flex;
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.boarding-pass .card-top{
+    text-align: center;
+    justify-content: space-between;
+    border-radius: 16px 16px 0 0;
+
+}
+
+.boarding-pass .card-top .code{
+    font-size: 32px;
+    font-weight: 900;
+}
+.boarding-pass .card-top .city{
+    font-size: 10px;
+    color: var(--primary);
+}
+
+.flight-median{
+    position: relative;
+    height: 50px;
+    width: 100px;
+    top: 12px;
+    background-color: #ffffff;
+    border-radius: 100% 100% 0 0 / 180% 180% 0 0;
+    border: 2px dashed transparent;
+    border-top-color: #ccc;
+}
+
+.flight-median::before{
+    content: '';
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    top: 14px;
+    left: 5px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    box-shadow: 80px 0 0 var(--primary);
+}
+
+.flight-median i{
+    position: relative;
+    top: -8px;
+    color: var(--primary);
+
+}
+
+
+.boarding-pass .card-bottom{
+    flex-direction: column;
+    border-radius: 0 0 16px 16px;
+    -webkit-border-radius: 0 0 16px 16px;
+    -moz-border-radius: 0 0 16px 16px;
+    -ms-border-radius: 0 0 16px 16px;
+    -o-border-radius: 0 0 16px 16px;
+}
+
+.boarding-pass .card-bottom .card-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.boarding-pass .card-bottom .card-row:not(:last-child){
+    margin-bottom: 32px ;
+}
+
+.boarding-pass .card-bottom .label{
+    font-size: 10px; 
+    color:rgba(109, 102, 4, 0.911);
+}
+
+
+.boarding-pass .card-bottom .content{
+    font-size: 14px; 
+    font-weight: 900;
+}
+
+.median{
+    height: 24px;
+    margin: 0 auto;
+    background-image: radial-gradient(circle, transparent 72%, #ffffff 72%),
+        linear-gradient(#ffffff, #ffffff ),
+        radial-gradient(circle, transparent 72%, #ffffff 72%);
+    background-size: 24px 24px, calc(100% - 24px) 100% ,24px 24px;
+    background-position: -12px 0, 12px 0 ,calc(100% + 12px) 0;
+    background-repeat: no-repeat;
+}
+
+/*-------------------------------End of boarding pass--------------------------------------------------*/
+
+
+
+
+/*-----------------Animated background---------------*/
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgba(109, 102, 4, 0.911) 50%, rgb(12, 13, 14) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+.bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+}
+ 
+.bg3 {
+    animation-duration:5s;
+}
+
+@keyframes slide {
+    0% {
+      transform:translateX(1%);
+    }
+    
+    100% {
+      transform:translateX(10%);
+    }
+  }
+/*-------------End of animated background----------------------*/
+
+
