@@ -518,7 +518,7 @@ html{
 
 @media (max-width:991px){
     html{
-        font-size: 55%;
+        font-size: 100%;
     }
 
     .main-header{
@@ -534,11 +534,11 @@ html{
     }
 
     .container form{
-        padding:10px;
-        width:700px;
+    
+        width:350PX;
         background: rgb(255, 255, 255);
         box-shadow: 0 5px 10px rgba(0,0,0,.1);
-        margin-right: 20rem;
+        margin-right: 30rem;
     }
       
 
@@ -547,28 +547,17 @@ html{
 
 @media (max-width: 768px){
 
-    .main-header .navbar{
-        right: 2rem; 
+    html{
+        width: auto;
+        overflow: hidden;
     }
 
-    #search-btn{
-        display: inline-block;
+    .main-header{
+        padding: 1.5rem 2rem;
     }
-    
-    .main-header .search-form{
-        position: absolute;
-        top: 115%;
-        right: 2rem;
-        background: #fff;
-        border-radius: .5rem;
-        width: 90%;
-        box-shadow: var(--box-shadow);
-        transform: scale(0);
-        transform-origin: top right;
-    }
-    
-    .main-header .search-form.active{
-        transform: scale(1);
+
+    .main-header .navbar{
+        right: 2rem; 
     }
 
     .container{
@@ -577,6 +566,13 @@ html{
         align-items: center;
         padding:20px;
         display: none;
+    }
+
+    .boarding-pass{
+        position: absolute;
+        width: 350px;
+        top: 19%;
+        left: 30%;
     }
 }
 
