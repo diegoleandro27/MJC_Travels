@@ -514,3 +514,64 @@ html{
 /*-------------End of animated background----------------------*/
 
 
+/*------------------------------Media queries--------------------------------------------*/
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+
+    .main-header{
+        padding: 1.5rem 2rem;
+    }
+    
+    section{
+        padding: 2rem;
+    }
+
+    section .content{
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px){
+
+    .main-header .navbar{
+        right: 2rem; 
+    }
+
+    #search-btn{
+        display: inline-block;
+    }
+    
+    .main-header .search-form{
+        position: absolute;
+        top: 115%;
+        right: 2rem;
+        background: #fff;
+        border-radius: .5rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+        transform: scale(0);
+        transform-origin: top right;
+    }
+    
+    .main-header .search-form.active{
+        transform: scale(1);
+    }
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .contact form .inputBox input{
+        width: 100%;
+    }
+    
+    .main-header .icons div{
+        margin: .1rem;
+    }
+}
