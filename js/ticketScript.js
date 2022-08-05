@@ -1,5 +1,5 @@
 let cards = document.querySelector('.offers');
-// let checkout = document.querySelector('.container');
+let checkout = document.querySelector('.container');
 let boardingPass = document.querySelector('.boarding-pass') 
 
 
@@ -17,6 +17,10 @@ function openCheckOut(){
     document.querySelector('.offers').classList.toggle('off');
 }
 
+function closeCheckOut(){
+    checkout.classList.remove('on');
+    boardingPass.classList.toggle('give');
+}
 // document.querySelector('#prueba').onclick = () => {
 //     checkout.classList.toggle('on');
 //     cards.classList.toggle('off');
