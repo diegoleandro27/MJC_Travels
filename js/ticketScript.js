@@ -12,6 +12,9 @@ let boardingPass = document.querySelector('.boarding-pass')
 //     }
 // }
 
+function openCheckOut(){ 
+    document.querySelector('.container').classList.toggle('on');
+}
 
 document.querySelector('#prueba').onclick = () => {
     checkout.classList.toggle('on');
