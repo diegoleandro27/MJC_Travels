@@ -83,17 +83,17 @@ function adminCode(){
 
 function confirmContacting(){
     confirm("Your comment has been sent successfully, Thanks for the feedback :) ");
-    window.location.href = "home.html";
+    window.location.href = "./index.html";
 }
 
 // Funcion de redireccionamiento de boton hacia pagina de tickets
 
 function sendToTickets(){
-    window.location.href = "tickets.html";
+    window.location.href = "./tickets.html";
 }
 
 // Funcion de mensaje de añadido realizado correctamente 
 function changeSaved(){
     confirm("Changes have been made correctly");
-    window.location.href = "administrator.html"
+    window.location.href = "./administrator.html"
 }
